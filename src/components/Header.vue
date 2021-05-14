@@ -94,6 +94,8 @@ body {
   box-shadow: 0 0 3px #000000;
   background: rgba(60, 60, 60, 0.25) !important;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   color:white;
 }
 .navbar-item, .navbar-link{
@@ -102,6 +104,8 @@ body {
 .navbar-start > .router-link-active {
 
   backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+
   color: white !important;
 }
 
@@ -111,6 +115,8 @@ body {
 .joined{
   color:white!important;
   backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+
   background-color: rgba(10, 12, 14, 0.38) !important;
   border: none!important;
 }

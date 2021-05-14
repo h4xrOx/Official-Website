@@ -146,6 +146,7 @@ export default {
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
     color:white;
     background: rgba(0, 0, 0, 0.27);
