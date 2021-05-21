@@ -24,23 +24,18 @@
 ;;
 ;; Use at your own risk.
 ;; SOA Record
-asynsense.com.	3600	IN	SOA	asynsense.com. root.asynsense.com. 2037321295 7200 3600 86400 3600
+;www.asynsense.com.       IN      A	3600	IN	SOA	asynsense.com. root.asynsense.com. 2037321295 7200 3600 86400 3600
+www.asynsense.com.      93      IN    A 185.199.109.153
 
 ;; A Records
-asynsense.com.	1	IN	A	216.239.32.21
-asynsense.com.	1	IN	A	216.239.38.21
-asynsense.com.	1	IN	A	216.239.36.21
-forum.asynsense.com.	1	IN	A	20.48.101.51
-www.asynsense.com.	1	IN	A	63.210.148.234
-
-;; AAAA Records
-asynsense.com.	1	IN	AAAA	2001:4860:4802:34::15
-asynsense.com.	1	IN	AAAA	2001:4860:4802:32::15
-asynsense.com.	1	IN	AAAA	2001:4860:4802:36::15
-asynsense.com.	1	IN	AAAA	2001:4860:4802:38::15
+root.asynsense.com.	1	IN	A	185.199.109.153
+h4xrOx.github.io/Official-Website	1	IN	A	185.199.109.153
+asynsense.com.	1	IN	A	185.199.109.153
+forum.asynsense.com.	1	IN	A	185.199.109.153
+www.asynsense.com.	1	IN	A	185.199.109.153
 
 ;; CNAME Records
-_domainconnect.asynsense.com.	1	IN	CNAME	connect.domains.google.com.
+asynsense.com.	1	IN	CNAME	h4xrOx.github.io
 
 ;; MX Records
-asynsense.com.	1	IN	MX	10 mxbiz1.qq.com.
+asynsense.com.	1	IN	MX	10 h4xrOx.github.io
