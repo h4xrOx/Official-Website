@@ -35,7 +35,7 @@ forum.asynsense.com.	1	IN	A	185.199.109.153
 www.asynsense.com.	1	IN	A	185.199.109.153
 
 ;; CNAME Records
-asynsense.com.	1	IN	CNAME	h4xrOx.github.io
+root.asynsense.com.	1	IN	CNAME	h4xrOx.github.io
 
 ;; MX Records
 asynsense.com.	1	IN	MX	10 h4xrOx.github.io
