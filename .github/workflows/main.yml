@@ -1,0 +1,106 @@
+- name: Run Runbook in Octopus Deploy
+  # You may pin to the exact commit or the version.
+  # uses: OctopusDeploy/run-runbook-action@042dd45c396e343ebf30ebdeb61be4266b9de03a
+  uses: OctopusDeploy/run-runbook-action@v1.0.0
+  with:
+    # The API key used to access Octopus Deploy. You must provide an API key or username and password. If the guest account is enabled, a key of API-GUEST may be used. It is strongly recommended that this value retrieved from a GitHub secret.
+    api_key: # optional
+    # Cancel the deployment if the deployment_timeout is exceeded (the default timeout is 10 minutes).
+    cancel_on_timeout: # optional, default is false
+    # The path to a configuration file of default values with one "key=value" per line.
+    config_file: # optional
+    # Enable debug logging.
+    debug: # optional, default is false
+    # A comma-delimited list of environments in Octopus Deploy in which to run (i.e. "Dev,Test,Prod").
+    environments: # optional
+    # A comma-separated list of machine names to exclude in the deployed environment. If empty, all machines in the environment will be considered.
+    exclude_machines: # optional
+    # Force download of installed packages.
+    force_package_download: # optional, default is false
+    # Use Guided Failure mode.
+    guided_failure: # optional, default is false
+    # Ignore certificate errors when communicating with Octopus Deploy. Warning: enabling this option creates a security vulnerability.
+    ignore_ssl_errors: # optional, default is false
+    # The log level; valid options are "verbose", "debug", "information", "warning", "error", and "fatal".
+    log_level: # optional, default is debug
+    # Print the raw log of failed tasks.
+    no_raw_log: # optional, default is false
+    # The time at which scheduled runbook run should expire, specified as any valid DateTimeOffset format, and assuming the time zone is the current local time zone.
+    no_run_after: # optional
+    # The password to used to authenticate with Octopus Deploy. It is strongly recommended to retrieve this value from a GitHub secret.
+    password: # optional
+    # The name or ID of the project associated with this runbook.
+    project: 
+    # The URL of a proxy to use (i.e. https://proxy.example.com).
+    proxy: # optional
+    # The password used to connect to a proxy. It is strongly recommended to retrieve this value from a GitHub secret. If proxy_username and proxy_password are omitted and proxy URL is specified, the default credentials are used.
+    proxy_password: # optional
+    # The username used to connect to a proxy. It is strongly recommended to retrieve this value from a GitHub secret.
+    proxy_username: # optional
+    # Redirect the raw log of failed tasks to a file.
+    raw_log_file: # optional
+    # The time at which runbook run should start (scheduled run), specified as any valid DateTimeOffset format, and assuming the time zone is the current local time zone.
+    run_at: # optional
+    # The name or ID of the runbook. If the name is supplied, the project input value must also be specified.
+    runbook: # optional
+    # The maximum length of time that the console session will wait for the runbook run to finish. Note: This will not stop the run. This input requires the wait_for_run input value to be true (format: HH:MM:SS). The default is 10 minutes.
+    run_timeout: # optional, default is 00:10:00
+    # The base URL hosting Octopus Deploy (i.e. "https://octopus.example.com/"). It is recommended to retrieve this value from an environment variable.
+    server: # optional
+    # Show progress of the runbook.
+    show_progress: # optional, default is false
+    # Skip a step by name.
+    skip: # optional
+    # The name or ID of a space within which this command will be executed. If omitted, the default space will be used.
+    space: # optional
+    # A comma-separated list of machine names to target in the deployed environment. If not specified all machines in the environment will be considered.
+    specific_machines: # optional
+    # Create a deployment for the tenant with this name or ID; specify this argument multiple times to add multiple tenants or use a wildcard ("*") to deploy to all tenants who are ready for this release (according to lifecycle).
+    tenant: # optional
+    # Create a deployment for tenants matching this tag; specify this argument multiple times to build a query/filter with multiple tags.
+    tenant_tag: # optional
+    # A timeout value in seconds for network operations.
+    timeout: # optional, default is 600
+    # The username used to authenticate with Octopus Deploy. You must provide an apiKey or username and password. It is strongly recommended to retrieve this value from a GitHub secret.
+    username: # optional
+    # Values for any prompted variables in the format, Label:Value. For JSON values, embedded quotation marks should be escaped with a backslash.
+    variable: # optional
+    # Indicates whether or not to wait synchronously for deployment to finish.
+    wait_for_run: # optional, default is false
+
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
